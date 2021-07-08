@@ -1,8 +1,8 @@
 module.exports = {
-  HOST: "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  DB: "q7nunjp0nezlot6a",
   USER: "yqk1p8u8s92oymbx",
   PASSWORD: "s3kv3nw5fsk5e84r",
-  DB: "q7nunjp0nezlot6a",
+  HOST: "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   PORT: 3306,
   dialect: 'mysql',
   pool: {
