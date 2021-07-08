@@ -1,18 +1,20 @@
-const dbConfig = require("./config.json");
+const dbConfig = require("./config");
 const Sequelize = require("sequelize");
 
-var env = process.env.NODE_ENV || "development"
-var config= require(__dirname + "../config/config.json")[env]
-const db = {};
 
-if(config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  const sequelize = new Sequelize(config.DB, config.USER, config.PASSWORD, config);
-}
-
-
- 
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+    host: dbConfig.HOST,
+    dialect: dbConfig.dialect,
+    operatorsAliases: 0,
+  
+    pool: {
+      max: dbConfig.pool.max,
+      min: dbConfig.pool.min,
+      acquire: dbConfig.pool.acquire,
+      idle: dbConfig.pool.idle
+    }
+  });
+  const db = {};
   db.Sequelize = Sequelize;
   db.sequelize = sequelize;
   
