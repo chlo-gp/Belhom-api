@@ -1,5 +1,4 @@
 const express = require('express')
-const serveStatic = require('serve-static')
 const app = express()
 const cors = require('cors')
 app.use(express.static('uploads'));
